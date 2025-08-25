@@ -1,2 +1,1 @@
-Tableau
-A custom default homepage was created featuring the Home report embedded within a Web Page object, offering a centralized and consistent entry point for users. When a user selects a report from the Reports tree, the chosen report loads dynamically within the same Web Page frame. This approach provides a seamless and fluid user experience by eliminating page reloads and navigation disruptions, enabling users to efficiently switch between reports within a unified, integrated interface.
+
