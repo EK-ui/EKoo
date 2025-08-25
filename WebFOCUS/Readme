@@ -1,0 +1,13 @@
+WebFOCUS
+
+Implemented role-based access controls to ensure sensitive information is accessible only to authorized users.
+
+User Roles and Access Permissions:
+
+•	Admin: Access to all portals - Executive, Manager, and Analyst
+•	User1: Access to the Executive Portal only
+•	User2: Access to the Executive and Manager Portals
+•	User3: Access to all portals - Executive, Manager, and Analyst
+•	User4: Access to the Manager Portal only
+
+Also created a Scorecard Portal.
