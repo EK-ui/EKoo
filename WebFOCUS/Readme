@@ -1,13 +1,39 @@
-WebFOCUS
-
-Implemented role-based access controls to ensure sensitive information is accessible only to authorized users.
-
+WebFOCUS Role-Based Access Control Overview
+To ensure sensitive information is accessible only to authorized users, role-based access controls have been implemented across all portals.
 User Roles and Access Permissions:
+•	Admin:
+Access: All portals — Executive, Manager, and Analyst
+Snapshots: 
+o	Admin Portal
+Description: Dashboard view showing comprehensive access controls, user management options, and all available data portals.
+•	User1:
+Access: Executive Portal only
+Snapshots: 
+o	User1 Executive Sales
+Description: Sales overview dashboard tailored for User1, highlighting key sales metrics and reports.
+o	User1 Executive Guest
+Description: Guest view with limited access, displaying summarized sales data for stakeholder presentations.
+o	User1 Executive Team
+Description: Team performance dashboard showing aggregated metrics and team contributions.
+•	User2:
+Access: Executive and Manager Portals
+Snapshots: 
+o	User2 Executive
+Description: Executive-level insights, including high-level KPIs and strategic dashboards.
+o	User2 Manager
+Description: Manager-specific dashboards focused on operational metrics.
+•	User3:
+Access: All portals — Executive, Manager, and Analyst
+Snapshots: 
+o	User3 Portal
+Description: A comprehensive view combining insights across all roles, with detailed analytics and data drill-downs.
+•	User4:
+Access: Manager Portal only
+Snapshots: 
+o	User4 Portal
+Description: Manager dashboard focused on operational metrics.
+________________________________________
+Additional Portal:
+•	Scorecard Portal
+Description: A dedicated portal for scorecards, displaying key performance indicators (KPIs), targets, and progress tracking.
 
-•	Admin: Access to all portals - Executive, Manager, and Analyst
-•	User1: Access to the Executive Portal only
-•	User2: Access to the Executive and Manager Portals
-•	User3: Access to all portals - Executive, Manager, and Analyst
-•	User4: Access to the Manager Portal only
-
-Also created a Scorecard Portal.
