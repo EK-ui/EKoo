@@ -23,3 +23,16 @@ Python, Bubble, and Scatter
   o	Animation: Dragging a time-based field to the Play Axis allows you to animate the scatter plot over time, illustrating how data points change daily, monthly, or yearly.
   o	Customization: Dragging a categorical field to the Legend field enables color-coding of data points, providing additional context and enhancing interpretability.
 
+Python
+•	Two Python scripts are used to render static images.
+•	Additionally, two scripts were created with hover functionality. However, the visual is rendered in a new browser tab rather than directly on the Power BI report canvas.
+
+Limitations in Power BI
+Power BI’s Python visuals are primarily designed to display static images. Interactive features such as tooltips or hover effects are limited. 
+
+Currently, Power BI does not support embedding Python visuals directly onto the report page in the same way as native visuals. Instead, Python visuals are rendered within a dedicated container, which appears as a separate object on the report. When hover functionality is included in Python scripts, the output typically appears in this container, often opening in a new window or tab.
+
+Error Message Explanation
+The message “Can’t display this visual. See details.” appears when attempting to embed Python scripts with hover interactivity. This occurs because the output is rendered within the Python visual container, which functions as a separate window rather than directly on the report canvas.
+
+
