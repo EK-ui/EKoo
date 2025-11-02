@@ -24,7 +24,7 @@ Python, Bubble, and Scatter
   o	Customization: Dragging a categorical field to the Legend field enables color-coding of data points, providing additional context and enhancing interpretability.
 
 Python
-•	Two Python scripts are used to render static images.
+•	Two Python scripts were created to render static images.
 •	Additionally, two scripts were created with hover functionality. However, the visual is rendered in a new browser tab rather than directly on the Power BI report canvas.
 
 Limitations in Power BI
