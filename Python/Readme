@@ -1,1 +1,8 @@
-   
+Python scripts and report output screenshots
+•	pip list - Data science libraries installed
+•	hover_script.py and hover.png
+•	mathplotlib_script.py and mathplotlib.png
+•	numpy_script.py and numpy.png
+•	plotly_script.py and plotly.png
+•	seaborn_swarmplot_script.py and seaborn_swarmplot.png
+•	swarmplot_script.py and swarmplot.png   
