@@ -1,20 +1,104 @@
 Python scripts and report output screenshots
 •	pip list - Data science libraries installed
 •	hover_script.py and hover.png
-        import seaborn as sns
-        import matplotlib.pyplot as plt
-        
-        sns.set_theme(style="whitegrid", palette="muted")
-        
-        # Load the tips dataset
-        df = sns.load_dataset("tips")
-        
-        sns.swarmplot(data=df, x="day", y="total_bill", hue="sex")
-        plt.title("Total Bill by Day and Sex")
-        plt.ylabel("Total Bill")
-        plt.show()
+                import seaborn as sns
+                import matplotlib.pyplot as plt
+                
+                sns.set_theme(style="whitegrid", palette="muted")
+                
+                # Load the tips dataset
+                df = sns.load_dataset("tips")
+                
+                sns.swarmplot(data=df, x="day", y="total_bill", hue="sex")
+                plt.title("Total Bill by Day and Sex")
+                plt.ylabel("Total Bill")
+                plt.show()
 •	mathplotlib_script.py and mathplotlib.png
+                import pandas as pd
+                import seaborn as sns
+                import matplotlib.pyplot as plt
+                
+                # Load dataset (Power BI expects a 'dataset' DataFrame)
+                # In Power BI, this line might be replaced by the data you feed to the visual
+                # Example if your data is named 'dataset' in Power BI:
+                # tips = dataset
+                tips = sns.load_dataset('tips')
+                
+                # Create a Matplotlib scatter plot
+                plt.figure(figsize=(10, 6))
+                # Separate data by 'smoker' status for coloring, similar to your Plotly code
+                for name, group in tips.groupby('smoker'):
+                    plt.plot(
+                        group['total_bill'],
+                        group['tip'],
+                        marker='o',
+                        linestyle='',
+                        label=name
+                    )
+                
+                plt.xlabel('total_bill')
+                plt.ylabel('tip')
+                plt.title('Total Bill vs Tip by Smoker Status')
+                plt.legend(title='Smoker')
+                plt.grid(True)
+                
+                # Display the plot
+                plt.show()
 •	numpy_script.py and numpy.png
+                import seaborn as sns
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                
+                # Load the tips dataset
+                tips = sns.load_dataset('tips')
+                
+                # Example: Calculate mean total bill and tip grouped by smoker status
+                grouped = tips.groupby('smoker').agg({
+                    'total_bill': 'mean',
+                    'tip': 'mean'
+                }).reset_index()
+                
+                # Use NumPy to compute the difference between smoker and non-smoker groups
+                difference_total_bill = np.abs(grouped.loc[grouped['smoker'] == 'Yes', 'total_bill'].values[0] - 
+                                               grouped.loc[grouped['smoker'] == 'No', 'total_bill'].values[0])
+                
+                difference_tip = np.abs(grouped.loc[grouped['smoker'] == 'Yes', 'tip'].values[0] - 
+                                        grouped.loc[grouped['smoker'] == 'No', 'tip'].values[0])
+                
+                # Print the differences
+                print(f"Difference in average total bill between smokers and non-smokers: {difference_total_bill:.2f}")
+                print(f"Difference in average tip between smokers and non-smokers: {difference_tip:.2f}")
+                
+                # Plot total_bill vs tip, colored by smoker status
+                plt.figure(figsize=(8, 6))
+                sns.scatterplot(data=tips, x='total_bill', y='tip', hue='smoker')
+                plt.title('Total Bill vs Tip by Smoker Status')
+                plt.xlabel('Total Bill')
+                plt.ylabel('Tip')
+                
+                # Show plot (Power BI will capture this)
+                plt.show()
 •	plotly_script.py and plotly.png
+                import plotly.express as px
+                import seaborn as sns
+                
+                # Load dataset
+                tips = sns.load_dataset('tips')
+                
+                # Create Plotly scatter plot with hover info
+                fig = px.scatter(
+                    tips,
+                    x='total_bill',
+                    y='tip',
+                    color='smoker',
+                    hover_data=['total_bill', 'tip']
+                )
+                
+                fig.update_layout(title='Total Bill vs Tip by Smoker Status')
+                
+                # Show the plot
+                import plotly.io as pio
+                pio.show(fig)
 •	seaborn_swarmplot_script.py and seaborn_swarmplot.png
 •	swarmplot_script.py and swarmplot.png   
