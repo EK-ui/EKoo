@@ -1,18 +1,18 @@
 Python scripts and report output screenshots
 •	pip list - Data science libraries installed
 •	hover_script.py and hover.png
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-    
-    sns.set_theme(style="whitegrid", palette="muted")
-    
-    # Load the tips dataset
-    df = sns.load_dataset("tips")
-    
-    sns.swarmplot(data=df, x="day", y="total_bill", hue="sex")
-    plt.title("Total Bill by Day and Sex")
-    plt.ylabel("Total Bill")
-    plt.show()
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+        
+        sns.set_theme(style="whitegrid", palette="muted")
+        
+        # Load the tips dataset
+        df = sns.load_dataset("tips")
+        
+        sns.swarmplot(data=df, x="day", y="total_bill", hue="sex")
+        plt.title("Total Bill by Day and Sex")
+        plt.ylabel("Total Bill")
+        plt.show()
 •	mathplotlib_script.py and mathplotlib.png
 •	numpy_script.py and numpy.png
 •	plotly_script.py and plotly.png
