@@ -114,4 +114,16 @@ Python scripts and report output screenshots
       ax.set(ylabel="Body Mass (g)")
       ax.set_title("Penguins Body Mass by Species and Sex")
       plt.show()
-•	swarmplot_script.py and swarmplot.png   
+•	swarmplot_script.py and swarmplot.png 
+      import seaborn as sns
+      import matplotlib.pyplot as plt
+      
+      sns.set_theme(style="whitegrid", palette="muted")
+      
+      # Load the tips dataset
+      df = sns.load_dataset("tips")
+      
+      sns.swarmplot(data=df, x="day", y="total_bill", hue="sex")
+      plt.title("Total Bill by Day and Sex")
+      plt.ylabel("Total Bill")
+      plt.show()
