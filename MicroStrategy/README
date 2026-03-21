@@ -1,5 +1,68 @@
 * AdventureWorksSQL.jpg
 Source code custom SQL query
+SELECT 
+    fis.[ProductKey],
+    fis.[OrderDateKey],
+    fis.[DueDateKey],
+    fis.[ShipDateKey],
+    fis.[CustomerKey],
+    fis.[SalesTerritoryKey],
+    fis.[OrderQuantity],
+    fis.[UnitPrice],
+    fis.[ExtendedAmount],
+    fis.[DiscountAmount],
+    fis.[ProductStandardCost],
+    fis.[TotalProductCost],
+    fis.[SalesAmount],
+    fis.[SalesAmount] - [TotalProductCost] as Profit,
+    (fis.[SalesAmount] - fis.[TotalProductCost]) * 100.0 / fis.[SalesAmount] as ProfitMarginPct,
+    fis.[SalesAmount] + fis.[DiscountAmount] as OriginalPrice,
+    (fis.[DiscountAmount] / (fis.[SalesAmount] + fis.[DiscountAmount])) * 100.0 as DiscountPct,
+    (LAG(fis.[SalesAmount]) OVER (ORDER BY dd.[CalendarYear])) AS PriorYearSales,
+    (LAG(fis.[SalesAmount] - [TotalProductCost]) OVER (ORDER BY dd.[CalendarYear])) AS PriorYearProfit,
+    fis.[TaxAmt],
+    fis.[OrderDate],
+    fis.[DueDate],
+    fis.[ShipDate],
+    dd.[FullDateAlternateKey],
+    dd.[DayNumberOfWeek],
+    dd.[EnglishDayNameOfWeek],
+    dd.[DayNumberOfMonth],
+    dd.[DayNumberOfYear],
+    dd.[WeekNumberOfYear],
+    dd.[EnglishMonthName],
+    dd.[MonthNumberOfYear],
+    dd.[CalendarQuarter],
+    dd.[CalendarYear],
+    dd.CalendarYear-1 as PriorYear,
+    dd.[CalendarSemester],
+    dd.[FiscalQuarter],
+    dd.[FiscalYear],
+    dd.[FiscalSemester],
+    c.[FirstName],
+    c.[LastName],
+    g.[City],
+    g.[StateProvinceCode],
+    g.[StateProvinceName],
+    g.[CountryRegionCode],
+    g.[EnglishCountryRegionName],
+    p.[EnglishProductName],
+    pc.[EnglishProductCategoryName],
+    psc.[EnglishProductSubcategoryName]
+FROM [AdventureWorksDW2022].[dbo].[FactInternetSales] fis
+JOIN [AdventureWorksDW2022].[dbo].[DimDate] dd
+    ON fis.[OrderDateKey] = dd.[DateKey]
+LEFT JOIN [AdventureWorksDW2022].[dbo].[DimCustomer] c
+    ON fis.[CustomerKey] = c.[CustomerKey]
+LEFT JOIN [AdventureWorksDW2022].[dbo].[DimGeography] g
+    ON c.[GeographyKey] = g.[GeographyKey]
+LEFT JOIN [AdventureWorksDW2022].[dbo].[DimProduct] p
+    ON fis.[ProductKey] = p.[ProductKey]
+LEFT JOIN [AdventureWorksDW2022].[dbo].[DimProductSubcategory] psc
+    ON p.[ProductSubcategoryKey] = psc.[ProductSubcategoryKey]
+LEFT JOIN [AdventureWorksDW2022].[dbo].[DimProductCategory] pc
+    ON psc.[ProductCategoryKey] = pc.[ProductCategoryKey]
+WHERE dd.[CalendarYear] > 2021
 
 * Airbnb DashboardBubble.jpg
 Implemented interactive cross-filtering to enhance data exploration. The Room Type horizontal bar chart acts as a selector for the KPIs, Location/Price, and Superhost Status panels.
