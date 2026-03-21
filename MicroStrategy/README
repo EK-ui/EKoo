@@ -1,5 +1,6 @@
 * AdventureWorksSQL.jpg
-Source code custom SQL query
+
+Custom SQL query source code
 SELECT 
     fis.[ProductKey],
     fis.[OrderDateKey],
