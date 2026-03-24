@@ -1,4 +1,5 @@
-* AdventureWorksSQLGlobalFilter.jpg - Year Dropdown filter, KPI's, Bubble, Area, Dual Axis Bar/Line, Heat Map visuals
+* AdventureWorksSQLGlobalFilter.jpg
+Implemented interactive cross-filtering to enhance data exploration. The Year dropdown filter acts as a selector for the KPI's, Bubble, Area, Dual Axis Bar/Line, Heat Map visuals.
 
 Custom SQL query source code
 SELECT 
@@ -66,8 +67,8 @@ LEFT JOIN [AdventureWorksDW2022].[dbo].[DimProductCategory] pc
 WHERE dd.[CalendarYear] > 2021
 
 * Airbnb DashboardBubble.jpg
-Implemented interactive cross-filtering to enhance data exploration. The Room Type horizontal bar chart acts as a selector for the KPIs, Location/Price, and Superhost Status panels.
+Implemented interactive cross-filtering to enhance data exploration. The Room Type horizontal bar chart acts as a selector for the KPIs, Location/Price, and Superhost Status visuals.
 
 * AirbnbDashboardMarker.jpg
-Implemented interactive cross-filtering to enhance data exploration. The Room Type horizontal bar chart acts as a selector for the KPIs, Location/Price, and Superhost Status panels.
+Implemented interactive cross-filtering to enhance data exploration. The Room Type horizontal bar chart acts as a selector for the KPIs, Location/Price, and Superhost Status visuals.
 
